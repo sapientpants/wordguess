@@ -29,7 +29,11 @@ const Hooks = {}
 Hooks.Theme = {
   mounted() {
     this.handleEvent("update-theme", ({ theme }) => {
+      console.log("Changing theme to:", theme);
+      // Update both the document and the container
       document.documentElement.setAttribute("data-theme", theme);
+      this.el.setAttribute("data-theme", theme);
+      console.log("Document theme attribute is now:", document.documentElement.getAttribute("data-theme"));
     });
   }
 }
@@ -38,8 +42,28 @@ let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("
 let liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
   params: {_csrf_token: csrfToken},
-  hooks: Hooks
+  hooks: Hooks,
+  dom: {
+    onBeforeElUpdated(from, to) {
+      // Preserve data-theme attribute when the DOM is updated
+      if (from.getAttribute("data-theme") && !to.getAttribute("data-theme")) {
+        to.setAttribute("data-theme", from.getAttribute("data-theme"));
+      }
+      return to;
+    }
+  }
 })
+
+// Handle js-exec events
+window.addEventListener("phx:js-exec", ({ detail }) => {
+  document.querySelectorAll(detail.to).forEach(el => {
+    el.setAttribute(detail.attr, detail.val);
+    // Also update document element if we're changing theme
+    if (detail.attr === "data-theme") {
+      document.documentElement.setAttribute("data-theme", detail.val);
+    }
+  });
+});
 
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})

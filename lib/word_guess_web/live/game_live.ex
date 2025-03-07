@@ -402,7 +402,13 @@ defmodule WordGuessWeb.GameLive do
       |> assign(current_theme: theme)
       |> push_event("update-theme", %{theme: theme})
 
-    {:noreply, socket}
+    # Also push a JavaScript command to ensure the theme is applied
+    {:noreply,
+     push_event(socket, "js-exec", %{
+       to: "#theme-container",
+       attr: "data-theme",
+       val: theme
+     })}
   end
 
   def handle_event("return_to_start", _params, socket) do
