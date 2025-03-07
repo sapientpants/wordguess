@@ -39,7 +39,7 @@ defmodule WordGuessWeb.GameLive do
 
   def render(assigns) do
     ~H"""
-    <div style="min-height: 100vh; padding: 1rem;" data-theme={@current_theme}>
+    <div style="min-height: 100vh; padding: 1rem;" data-theme={@current_theme} phx-hook="Theme" id="theme-container">
       <div style="max-width: 64rem; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 2rem;">
           <h1 style="font-size: 3rem; font-weight: 800; color: #6366f1; margin-bottom: 0.5rem;">
@@ -396,7 +396,13 @@ defmodule WordGuessWeb.GameLive do
   end
 
   def handle_event("change_theme", %{"theme" => theme}, socket) do
-    {:noreply, assign(socket, current_theme: theme)}
+    # Update the document element's data-theme attribute using JavaScript
+    socket =
+      socket
+      |> assign(current_theme: theme)
+      |> push_event("update-theme", %{theme: theme})
+
+    {:noreply, socket}
   end
 
   def handle_event("return_to_start", _params, socket) do
