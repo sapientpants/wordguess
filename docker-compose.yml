@@ -33,20 +33,5 @@ services:
       - "4000:4000"
     command: sh -c "mix deps.get && mix ecto.create && mix ecto.migrate && mix phx.server"
 
-  test:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: word_guess_test
-    depends_on:
-      db:
-        condition: service_healthy
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@db/word_guess_test
-      SECRET_KEY_BASE: QQPvnMmYvRPdGY5yqJs24UpLBDNvT22kzC4wladlybcFT38KfkJK2QQ+nLLgRbK/
-      PHX_HOST: localhost
-      MIX_ENV: test
-    command: sh -c "mix deps.get && mix ecto.create && mix ecto.migrate && mix test"
-
 volumes:
   postgres_data:
