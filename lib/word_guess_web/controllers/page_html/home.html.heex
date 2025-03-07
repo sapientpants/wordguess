@@ -1,0 +1,49 @@
+<.flash_group flash={@flash} />
+<div class="bg-gray-900 min-h-screen flex flex-col items-center justify-center px-4 py-10 sm:px-6 sm:py-28 lg:px-8">
+  <div class="max-w-3xl mx-auto text-center">
+    <h1 class="text-5xl font-extrabold text-indigo-300 mb-6">Word Guess Game</h1>
+
+    <div class="mb-8 text-gray-300 text-xl">
+      <p class="mb-4">Welcome to the classic word-guessing game!</p>
+      <p>Try to guess the hidden word one letter at a time before you run out of attempts.</p>
+    </div>
+
+    <div class="mb-12 font-mono text-4xl text-indigo-300 tracking-widest">
+      _ _ _ _ _ _ _
+    </div>
+
+    <div class="mb-12 bg-gray-800 p-6 rounded-lg border-2 border-indigo-500 inline-block">
+      <div class="flex flex-col items-center">
+        <div class="text-xl text-indigo-300 mb-4">Remaining Attempts</div>
+        <div class="w-64 bg-gray-700 rounded-full h-8 border-2 border-indigo-400">
+          <div class="h-full rounded-full bg-green-500" style="width: 100%;"></div>
+        </div>
+        <div class="mt-4 text-gray-300">
+          <span class="text-2xl font-bold text-indigo-300">6</span>
+          of <span class="text-2xl font-bold text-indigo-300">6</span>
+          attempts left
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-indigo-200 mb-4">How to Play:</h2>
+      <ul class="text-gray-300 text-left list-disc pl-6 space-y-2">
+        <li>A random word will be selected</li>
+        <li>Guess one letter at a time by clicking on the keyboard</li>
+        <li>Correct guesses reveal the letter in the word</li>
+        <li>Incorrect guesses add to your mistake count</li>
+        <li>Win by guessing the word before you reach the maximum number of mistakes</li>
+      </ul>
+    </div>
+
+    <div class="mt-8">
+      <a
+        href="/game"
+        class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-lg text-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+      >
+        Start Playing
+      </a>
+    </div>
+  </div>
+</div>

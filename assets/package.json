@@ -1,0 +1,20 @@
+{
+  "name": "word_guess",
+  "version": "1.0.0",
+  "description": "Word Guess game with Phoenix LiveView",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "topbar": "file:./vendor/topbar.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "daisyui": "^5.0.0",
+    "tailwindcss": "^3.3.5"
+  }
+}
