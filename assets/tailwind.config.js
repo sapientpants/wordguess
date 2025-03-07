@@ -134,6 +134,16 @@ module.exports = {
           "success": "#00ff00",          // Green
           "warning": "#ffff00",          // Yellow
           "error": "#ff0000",            // Red
+          
+          "--rounded-box": "0.75rem",    // border radius for cards and other large elements
+          "--rounded-btn": "0.5rem",     // border radius for buttons
+          "--rounded-badge": "0.375rem", // border radius for badges
+          "--animation-btn": "0.3s",     // speed of button animations
+          "--animation-input": "0.2s",   // speed of input animations
+          "--btn-focus-scale": "0.95",   // scale transform of button when focused
+          "--border-btn": "1px",         // border width of buttons
+          "--tab-border": "1px",         // border width of tabs
+          "--tab-radius": "0.5rem",      // border radius of tabs
         },
       },
       {
@@ -150,6 +160,16 @@ module.exports = {
           "success": "#00ff00",          // Green
           "warning": "#ffff00",          // Yellow
           "error": "#ff0000",            // Red
+          
+          "--rounded-box": "0.75rem",    // border radius for cards and other large elements
+          "--rounded-btn": "0.5rem",     // border radius for buttons
+          "--rounded-badge": "0.375rem", // border radius for badges
+          "--animation-btn": "0.3s",     // speed of button animations
+          "--animation-input": "0.2s",   // speed of input animations
+          "--btn-focus-scale": "0.95",   // scale transform of button when focused
+          "--border-btn": "1px",         // border width of buttons
+          "--tab-border": "1px",         // border width of tabs
+          "--tab-radius": "0.5rem",      // border radius of tabs
         },
       },
       {
@@ -166,6 +186,16 @@ module.exports = {
           "success": "#66bb6a",          // Green
           "warning": "#ffa726",          // Orange
           "error": "#ef5350",            // Red
+          
+          "--rounded-box": "0.75rem",    // border radius for cards and other large elements
+          "--rounded-btn": "0.5rem",     // border radius for buttons
+          "--rounded-badge": "0.375rem", // border radius for badges
+          "--animation-btn": "0.3s",     // speed of button animations
+          "--animation-input": "0.2s",   // speed of input animations
+          "--btn-focus-scale": "0.95",   // scale transform of button when focused
+          "--border-btn": "1px",         // border width of buttons
+          "--tab-border": "1px",         // border width of tabs
+          "--tab-radius": "0.5rem",      // border radius of tabs
         },
       },
       {
@@ -182,12 +212,72 @@ module.exports = {
           "success": "#66bb6a",          // Green
           "warning": "#ffa726",          // Orange
           "error": "#ef5350",            // Red
+          
+          "--rounded-box": "0.75rem",    // border radius for cards and other large elements
+          "--rounded-btn": "0.5rem",     // border radius for buttons
+          "--rounded-badge": "0.375rem", // border radius for badges
+          "--animation-btn": "0.3s",     // speed of button animations
+          "--animation-input": "0.2s",   // speed of input animations
+          "--btn-focus-scale": "0.95",   // scale transform of button when focused
+          "--border-btn": "1px",         // border width of buttons
+          "--tab-border": "1px",         // border width of tabs
+          "--tab-radius": "0.5rem",      // border radius of tabs
         },
       },
-      "light",
-      "dark",
+      {
+        light: {
+          "primary": "#6366f1",          // Indigo
+          "secondary": "#8b5cf6",        // Violet
+          "accent": "#ec4899",           // Pink
+          "neutral": "#f3f4f6",          // Gray-100
+          "base-100": "#ffffff",         // White
+          "base-200": "#f9fafb",         // Gray-50
+          "base-300": "#f3f4f6",         // Gray-100
+          "base-content": "#1f2937",     // Gray-800
+          "info": "#06b6d4",             // Cyan
+          "success": "#10b981",          // Emerald
+          "warning": "#f59e0b",          // Amber
+          "error": "#ef4444",            // Red
+          
+          "--rounded-box": "0.75rem",    // border radius for cards and other large elements
+          "--rounded-btn": "0.5rem",     // border radius for buttons
+          "--rounded-badge": "0.375rem", // border radius for badges
+          "--animation-btn": "0.3s",     // speed of button animations
+          "--animation-input": "0.2s",   // speed of input animations
+          "--btn-focus-scale": "0.95",   // scale transform of button when focused
+          "--border-btn": "1px",         // border width of buttons
+          "--tab-border": "1px",         // border width of tabs
+          "--tab-radius": "0.5rem",      // border radius of tabs
+        },
+      },
+      {
+        dark: {
+          "primary": "#6366f1",          // Indigo
+          "secondary": "#8b5cf6",        // Violet
+          "accent": "#ec4899",           // Pink
+          "neutral": "#1f2937",          // Gray-800
+          "base-100": "#111827",         // Gray-900
+          "base-200": "#1f2937",         // Gray-800
+          "base-300": "#374151",         // Gray-700
+          "base-content": "#f3f4f6",     // Gray-100
+          "info": "#06b6d4",             // Cyan
+          "success": "#10b981",          // Emerald
+          "warning": "#f59e0b",          // Amber
+          "error": "#ef4444",            // Red
+          
+          "--rounded-box": "0.75rem",    // border radius for cards and other large elements
+          "--rounded-btn": "0.5rem",     // border radius for buttons
+          "--rounded-badge": "0.375rem", // border radius for badges
+          "--animation-btn": "0.3s",     // speed of button animations
+          "--animation-input": "0.2s",   // speed of input animations
+          "--btn-focus-scale": "0.95",   // scale transform of button when focused
+          "--border-btn": "1px",         // border width of buttons
+          "--tab-border": "1px",         // border width of tabs
+          "--tab-radius": "0.5rem",      // border radius of tabs
+        },
+      },
     ],
-    darkTheme: "wordguess",
+    darkTheme: "dark",
     base: true,
     styled: true,
     utils: true,
